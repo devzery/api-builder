@@ -191,51 +191,58 @@
       @hide-modal="showCookiesModal = false"
     />
   </div>
-</template>
-
-<script setup lang="ts">
-import { ref } from "vue"
-import { version } from "~/../package.json"
-import IconCookie from "~icons/lucide/cookie"
-import IconSidebar from "~icons/lucide/sidebar"
-import IconZap from "~icons/lucide/zap"
-import IconShare2 from "~icons/lucide/share-2"
-import IconColumns from "~icons/lucide/columns"
-import IconSidebarOpen from "~icons/lucide/sidebar-open"
-import IconShieldCheck from "~icons/lucide/shield-check"
-import IconBook from "~icons/lucide/book"
-import IconGithub from "~icons/lucide/github"
-import IconTwitter from "~icons/lucide/twitter"
-import IconUserPlus from "~icons/lucide/user-plus"
-import IconLock from "~icons/lucide/lock"
-import IconHelpCircle from "~icons/lucide/help-circle"
-import { useSetting } from "@composables/settings"
-import { useI18n } from "@composables/i18n"
-import { useReadonlyStream } from "@composables/stream"
-import { platform } from "~/platform"
-import { TippyComponent } from "vue-tippy"
-import { getPlatformSpecialKey as getSpecialKey } from "~/helpers/platformutils"
-import { invokeAction } from "@helpers/actions"
-import { HoppSmartItem } from "@hoppscotch/ui"
-
-const t = useI18n()
-
-const showDeveloperOptions = ref(false)
-const showCookiesModal = ref(false)
-
-const EXPAND_NAVIGATION = useSetting("EXPAND_NAVIGATION")
-const SIDEBAR = useSetting("SIDEBAR")
-const COLUMN_LAYOUT = useSetting("COLUMN_LAYOUT")
-const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
-
-const navigatorShare = !!navigator.share
-
-const currentUser = useReadonlyStream(
+ </template>
+ 
+ 
+ <script setup lang="ts">
+ import { ref } from "vue"
+ import { version } from "~/../package.json"
+ import IconCookie from "~icons/lucide/cookie"
+ import IconSidebar from "~icons/lucide/sidebar"
+ import IconZap from "~icons/lucide/zap"
+ import IconShare2 from "~icons/lucide/share-2"
+ import IconColumns from "~icons/lucide/columns"
+ import IconSidebarOpen from "~icons/lucide/sidebar-open"
+ import IconShieldCheck from "~icons/lucide/shield-check"
+ import IconBook from "~icons/lucide/book"
+ import IconGithub from "~icons/lucide/github"
+ import IconTwitter from "~icons/lucide/twitter"
+ import IconUserPlus from "~icons/lucide/user-plus"
+ import IconLock from "~icons/lucide/lock"
+ import IconHelpCircle from "~icons/lucide/help-circle"
+ import { useSetting } from "@composables/settings"
+ import { useI18n } from "@composables/i18n"
+ import { useReadonlyStream } from "@composables/stream"
+ import { platform } from "~/platform"
+ import { TippyComponent } from "vue-tippy"
+ import { getPlatformSpecialKey as getSpecialKey } from "~/helpers/platformutils"
+ import { invokeAction } from "@helpers/actions"
+ import { HoppSmartItem } from "@hoppscotch/ui"
+ 
+ 
+ const t = useI18n()
+ 
+ 
+ const showDeveloperOptions = ref(false)
+ const showCookiesModal = ref(false)
+ 
+ 
+ const EXPAND_NAVIGATION = useSetting("EXPAND_NAVIGATION")
+ const SIDEBAR = useSetting("SIDEBAR")
+ const COLUMN_LAYOUT = useSetting("COLUMN_LAYOUT")
+ const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
+ 
+ 
+ const navigatorShare = !!navigator.share
+ 
+ 
+ const currentUser = useReadonlyStream(
   platform.auth.getCurrentUserStream(),
   platform.auth.getCurrentUser()
-)
-
-const nativeShare = () => {
+ )
+ 
+ 
+ const nativeShare = () => {
   if (navigator.share) {
     navigator
       .share({
@@ -247,17 +254,19 @@ const nativeShare = () => {
   } else {
     // fallback
   }
-}
-
-const showDeveloperOptionModal = () => {
+ }
+ 
+ 
+ const showDeveloperOptionModal = () => {
   if (currentUser.value) {
     showDeveloperOptions.value = true
   }
-}
-
-// Template refs
-const tippyActions = ref<TippyComponent | null>(null)
-const documentation = ref<typeof HoppSmartItem>()
-const shortcuts = ref<typeof HoppSmartItem>()
-const chat = ref<typeof HoppSmartItem>()
-</script>
+ }
+ 
+ 
+ // Template refs
+ const tippyActions = ref<TippyComponent | null>(null)
+ const documentation = ref<typeof HoppSmartItem>()
+ const shortcuts = ref<typeof HoppSmartItem>()
+ const chat = ref<typeof HoppSmartItem>()
+ </script>

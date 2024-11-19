@@ -33,21 +33,15 @@
         </div>
       </div>
     </div>
-    <HoppButtonSecondary
-      :label="`${t('app.documentation')}`"
-      to="https://docs.hoppscotch.io/documentation/features/rest-api-testing#response"
-      :icon="IconExternalLink"
-      blank
-      outline
-      reverse
-    />
   </div>
-</template>
-
-<script setup lang="ts">
-import { useI18n } from "~/composables/i18n"
-import IconExternalLink from "~icons/lucide/external-link"
-import { getPlatformSpecialKey as getSpecialKey } from "~/helpers/platformutils"
-
-const t = useI18n()
-</script>
+ </template>
+ 
+ 
+ <script setup lang="ts">
+ import { useI18n } from "~/composables/i18n"
+ import IconExternalLink from "~icons/lucide/external-link"
+ import { getPlatformSpecialKey as getSpecialKey } from "~/helpers/platformutils"
+ 
+ 
+ const t = useI18n()
+ </script>
