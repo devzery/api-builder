@@ -18,8 +18,6 @@ RUN pnpm install -f --offline
 FROM base_builder AS fe_builder
 # Build
 WORKDIR /usr/src/app/packages/hoppscotch-selfhost-web
-RUN pnpm install
-RUN pnpm run build
 RUN pnpm run generate
 
 # Production stage
