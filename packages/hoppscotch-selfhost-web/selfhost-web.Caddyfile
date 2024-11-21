@@ -3,7 +3,7 @@
   persist_config off
 }
 
-:80 :3000 {
+:8080 {
 	try_files {path} /
 	root * /site/selfhost-web
 	file_server
