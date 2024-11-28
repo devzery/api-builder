@@ -33,13 +33,13 @@
             :placeholder="`${t('action.search')}`"
           />
           <div class="flex">
-            <HoppButtonSecondary
+            <!-- <HoppButtonSecondary
               v-tippy="{ theme: 'tooltip' }"
               to="https://docs.hoppscotch.io/documentation/protocols/graphql"
               blank
               :title="t('app.wiki')"
               :icon="IconHelpCircle"
-            />
+            /> -->
           </div>
         </div>
         <HoppSmartTabs
@@ -117,13 +117,13 @@
           {{ t("graphql.schema") }}
         </label>
         <div class="flex">
-          <HoppButtonSecondary
+          <!-- <HoppButtonSecondary
             v-tippy="{ theme: 'tooltip' }"
             to="https://docs.hoppscotch.io/documentation/protocols/graphql"
             blank
             :title="t('app.wiki')"
             :icon="IconHelpCircle"
-          />
+          /> -->
           <HoppButtonSecondary
             v-tippy="{ theme: 'tooltip' }"
             :title="t('state.linewrap')"

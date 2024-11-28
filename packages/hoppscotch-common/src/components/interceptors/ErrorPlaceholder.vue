@@ -5,7 +5,7 @@
     :heading="t('error.network_fail')"
   >
     <template #body>
-      <div class="my-1 flex flex-col items-center text-secondaryLight">
+      <!-- <div class="my-1 flex flex-col items-center text-secondaryLight">
         <span>
           {{ t("error.please_install_extension") }}
         </span>
@@ -19,8 +19,8 @@
             here
           </HoppSmartLink>
         </span>
-      </div>
-      <div class="flex flex-col space-y-2 py-4">
+      </div> -->
+      <!-- <div class="flex flex-col space-y-2 py-4">
         <HoppSmartItem
           to="https://chrome.google.com/webstore/detail/hoppscotch-browser-extens/amknoiejhlmhancpahfcfcfhllgkpbld"
           blank
@@ -39,8 +39,8 @@
           :active-info-icon="hasFirefoxExtInstalled"
           outline
         />
-      </div>
-      <div class="space-y-4 py-4">
+      </div> -->
+      <!-- <div class="space-y-4 py-4">
         <div class="flex items-center">
           <HoppSmartToggle
             :on="extensionEnabled"
@@ -49,7 +49,7 @@
             {{ t("settings.extensions_use_toggle") }}
           </HoppSmartToggle>
         </div>
-      </div>
+      </div> -->
     </template>
   </HoppSmartPlaceholder>
 </template>

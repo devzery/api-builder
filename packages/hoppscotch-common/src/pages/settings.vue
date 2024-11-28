@@ -224,7 +224,7 @@ const getColorModeName = (colorMode: string) => {
     case "black":
       return "settings.black_mode"
     default:
-      return "settings.system_mode"
+      return "settings.black_mode"
   }
 }
 </script>

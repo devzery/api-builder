@@ -21,7 +21,7 @@
         </HoppSmartToggle>
       </div>
 
-      <HoppButtonSecondary
+      <!-- <HoppButtonSecondary
         outline
         filled
         :icon="IconShieldQuestion"
@@ -29,7 +29,7 @@
         to="https://docs.hoppscotch.io/documentation/self-host/community-edition/telemetry"
         blank
         class="w-min my-2"
-      />
+      /> -->
     </div>
   </div>
 </template>

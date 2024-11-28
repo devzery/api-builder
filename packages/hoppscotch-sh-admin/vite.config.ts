@@ -87,7 +87,7 @@ export default defineConfig({
     }),
     process.env.HOPP_ALLOW_RUNTIME_ENV
       ? ImportMetaEnv.vite({
-          example: '../../.env.example',
+          example: '../../.env',
           env: '../../.env',
         })
       : [],

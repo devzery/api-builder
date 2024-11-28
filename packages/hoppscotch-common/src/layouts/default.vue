@@ -37,7 +37,7 @@
         </Splitpanes>
       </Pane>
       <Pane v-if="mdAndLarger" style="height: auto">
-        <AppFooter />
+        <!-- z<AppFooter /> -->
       </Pane>
       <Pane
         v-else
@@ -146,7 +146,7 @@
             persistenceService.setLocalConfig("cookiesAllowed", "yes")
             toastObject.goAway(0)
             window
-              .open("https://docs.hoppscotch.io/support/privacy", "_blank")
+              .open("https://www.devzery.com/privacy-policy", "_blank")
               ?.focus()
           },
         },

@@ -10,9 +10,9 @@ curlCheck() {
 }
 
 if [ "$ENABLE_SUBPATH_BASED_ACCESS" = "true" ]; then
-  curlCheck "http://localhost:80/backend/ping"
+  curlCheck "https://java.eastus.cloudapp.azure.com//backend/ping"
 else
   curlCheck "http://localhost:3000"
   curlCheck "http://localhost:3100"
-  curlCheck "http://localhost:3170/ping"
+  curlCheck "https://java.eastus.cloudapp.azure.com/ping"
 fi

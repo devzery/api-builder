@@ -79,11 +79,11 @@
 }
 
 @mixin pink-theme {
-  --accent-color: theme("colors.pink.500");
-  --accent-light-color: theme("colors.pink.400");
-  --accent-dark-color: theme("colors.pink.600");
+  --accent-color: #E27AAB;
+  --accent-light-color: #E27AAB;
+  --accent-dark-color: #E27AAB;
   --accent-contrast-color: theme("colors.white");
-  --gradient-from-color: theme("colors.pink.400");
-  --gradient-via-color: theme("colors.pink.500");
-  --gradient-to-color: theme("colors.pink.600");
+  --gradient-from-color: var(--accent-color);
+  --gradient-via-color: #DD6B9F;
+  --gradient-to-color: #DD6B9F;
 }

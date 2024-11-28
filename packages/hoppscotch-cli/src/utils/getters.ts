@@ -190,7 +190,7 @@ export const getResourceContents = async (
   }
 
   if (accessToken && !fileExistsInPath) {
-    const resolvedServerUrl = serverUrl || "https://api.hoppscotch.io";
+    const resolvedServerUrl = serverUrl || "https://java.eastus.cloudapp.azure.com";
 
     try {
       const separator = resolvedServerUrl.endsWith("/") ? "" : "/";

@@ -15,7 +15,7 @@ export const documentation: HoppSupportOptionsMenuItem = {
   icon: IconBook,
   action: {
     type: "link",
-    href: "https://docs.hoppscotch.io",
+    href: "",
   },
 }
 
@@ -39,7 +39,7 @@ export const changelog: HoppSupportOptionsMenuItem = {
   icon: IconGift,
   action: {
     type: "link",
-    href: "https://docs.hoppscotch.io/documentation/changelog",
+    href: "",
   },
 }
 
@@ -50,7 +50,7 @@ export const github: HoppSupportOptionsMenuItem = {
   icon: IconGitHub,
   action: {
     type: "link",
-    href: "https://hoppscotch.io/github",
+    href: "",
   },
 }
 
@@ -61,7 +61,7 @@ export const discord: HoppSupportOptionsMenuItem = {
   icon: IconDiscord,
   action: {
     type: "link",
-    href: "https://hoppscotch.io/discord",
+    href: "",
   },
 }
 
@@ -72,7 +72,7 @@ export const twitter: HoppSupportOptionsMenuItem = {
   icon: IconTwitter,
   action: {
     type: "link",
-    href: "https://hoppscotch.io/twitter",
+    href: "",
   },
 }
 

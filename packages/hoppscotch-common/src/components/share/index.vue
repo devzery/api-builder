@@ -17,14 +17,14 @@
         class="!rounded-none"
         @click="shareRequest()"
       />
-      <HoppButtonSecondary
+      <!-- <HoppButtonSecondary
         v-tippy="{ theme: 'tooltip' }"
         to="https://docs.hoppscotch.io/documentation/features/widgets"
         blank
         :title="t('app.wiki')"
         :icon="IconHelpCircle"
         class="py-2"
-      />
+      /> -->
     </div>
     <div class="flex flex-col">
       <div v-if="loading" class="flex flex-col items-center justify-center p-4">

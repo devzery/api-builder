@@ -36,21 +36,21 @@ const REALTIME_NAVIGATION = [
     title: t("tab.websocket"),
     icon: IconWebsocket,
   },
-  {
-    target: "sse",
-    title: t("tab.sse"),
-    icon: IconSse,
-  },
+  // {
+  //   target: "sse",
+  //   title: t("tab.sse"),
+  //   icon: IconSse,
+  // },
   {
     target: "socketio",
     title: t("tab.socketio"),
     icon: IconSocketio,
   },
-  {
-    target: "mqtt",
-    title: t("tab.mqtt"),
-    icon: IconMqtt,
-  },
+  // {
+  //   target: "mqtt",
+  //   title: t("tab.mqtt"),
+  //   icon: IconMqtt,
+  // },
 ] as const
 
 type RealtimeNavTab = (typeof REALTIME_NAVIGATION)[number]["target"]

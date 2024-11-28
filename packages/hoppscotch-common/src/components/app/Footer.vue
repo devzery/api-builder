@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <div class="flex justify-between bg-primary">
       <div class="flex">
@@ -269,4 +269,4 @@
  const documentation = ref<typeof HoppSmartItem>()
  const shortcuts = ref<typeof HoppSmartItem>()
  const chat = ref<typeof HoppSmartItem>()
- </script>
+ </script> -->

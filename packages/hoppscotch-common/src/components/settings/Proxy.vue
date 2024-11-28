@@ -1,12 +1,12 @@
 <template>
   <div class="my-1 text-secondaryLight">
     {{ `${t("settings.official_proxy_hosting")} ${t("settings.read_the")}` }}
-    <HoppSmartAnchor
+    <!-- <HoppSmartAnchor
       class="link"
       to="https://docs.hoppscotch.io/support/privacy"
       blank
       :label="t('app.proxy_privacy_policy')"
-    />.
+    />. -->
   </div>
   <div class="flex items-center space-x-2 py-4">
     <HoppSmartInput
