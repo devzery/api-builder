@@ -7,7 +7,6 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
     "dev": "pnpm -r do-dev",
     "gen-gql": "cross-env GQL_SCHEMA_EMIT_LOCATION='../../../gql-gen/backend-schema.gql' pnpm -r generate-gql-sdl",
     "generate": "pnpm -r do-build-prod",
@@ -15,7 +14,6 @@
     "lint": "pnpm -r do-lint",
     "typecheck": "pnpm -r do-typecheck",
     "lintfix": "pnpm -r do-lintfix",
-    "pre-commit": "pnpm -r do-lint && pnpm -r do-typecheck",
     "test": "pnpm -r do-test",
     "generate-ui": "pnpm -r do-build-ui"
   },
