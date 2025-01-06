@@ -7,7 +7,7 @@ import {
 import { PersistenceService } from "@hoppscotch/common/services/persistence"
 import axios from "axios"
 import { BehaviorSubject, Subject } from "rxjs"
-import { Ref, ref, watch } from "vue"
+import { Ref, ref, watch, defineComponent, onMounted } from "vue"
 import { getAllowedAuthProviders, updateUserDisplayName } from "./auth.api"
 import * as E from "fp-ts/Either"
 
@@ -58,7 +58,7 @@ async function getInitialUserDetails() {
     {
       query: `query Me {
       me {
-        uid
+        _id
         displayName
         email
         photoURL
@@ -85,6 +85,30 @@ function setUser(user: HoppUser | null) {
   probableUser$.next(user)
 
   persistenceService.setLocalConfig("login_state", JSON.stringify(user))
+}
+
+async function signInWithExternalUser(userDetails: {
+  uid: string
+  displayName: string
+  email: string
+  photoURL?: string
+}) {
+  const hoppUser: HoppUser = {
+    uid: userDetails.uid,
+    displayName: userDetails.displayName,
+    email: userDetails.email,
+    photoURL: userDetails.photoURL || null,
+    emailVerified: true,
+  }
+
+  setUser(hoppUser)
+
+  authEvents$.next({
+    event: "login",
+    user: hoppUser
+  })
+
+  return hoppUser
 }
 
 async function setInitialUser() {
@@ -369,4 +393,20 @@ export const def: AuthPlatformDef = {
     }
   },
   getAllowedAuthProviders,
+
+  customLoginSelectorUI: defineComponent({
+    name: 'ExternalAuthLogin',
+    setup() {
+      onMounted(() => {
+        console.log('customLoginSelectorUI')
+        // Listen for parent iframe message
+        window.addEventListener('message', (event) => {
+          if (event.data.type === 'AUTH_USER') {
+            console.log('AUTH_USER', event.data.user)
+            signInWithExternalUser(event.data.user)
+          }
+        })
+      })
+    }
+  })
 }

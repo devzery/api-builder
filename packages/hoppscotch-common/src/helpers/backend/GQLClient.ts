@@ -28,9 +28,11 @@ import { platform } from "~/platform"
 // TODO: Implement caching
 
 const BACKEND_GQL_URL =
-  import.meta.env.VITE_BACKEND_GQL_URL ?? "https://java.eastus.cloudapp.azure.com/graphql"
+  import.meta.env.VITE_BACKEND_GQL_URL ?? "http://localhost:8080/graphql"
+
+console.log("BACKEND_GQL_URL", BACKEND_GQL_URL)
 const BACKEND_WS_URL =
-  import.meta.env.VITE_BACKEND_WS_URL ?? "wss://java.eastus.cloudapp.azure.com/graphql"
+  import.meta.env.VITE_BACKEND_WS_URL ?? "ws://localhost8080/graphql"
 
 type GQLOpType = "query" | "mutation" | "subscription"
 /**

@@ -30,9 +30,26 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    force: true, // Add this line to force server restart
+    strictPort: true,
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0',
+      'Surrogate-Control': 'no-store',
+    },
+    watch: {
+      usePolling: true, // Add this for better file watching
+    }
   },
   preview: {
-    port: 3000,
+    port: 3100,
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0',
+      'Surrogate-Control': 'no-store',
+    },
   },
   publicDir: path.resolve(__dirname, "../hoppscotch-common/public"),
   build: {
@@ -147,84 +164,87 @@ export default defineConfig({
         ),
       },
     }),
+    // VitePWA({
+    //   useCredentials: true,
+    //   manifest: {
+    //     name: APP_INFO.name,
+    //     short_name: APP_INFO.name,
+    //     description: APP_INFO.shortDescription,
+    //     start_url: "/?source=pwa",
+    //     id: "/?source=pwa",
+    //     protocol_handlers: [
+    //       {
+    //         protocol: "web+hoppscotch",
+    //         url: "/%s",
+    //       },
+    //       {
+    //         protocol: "web+hopp",
+    //         url: "/%s",
+    //       },
+    //     ],
+    //     background_color: APP_INFO.app.background,
+    //     theme_color: APP_INFO.app.background,
+    //     icons: [
+    //       {
+    //         src: "/icons/pwa-16x16.png",
+    //         sizes: "16x16",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/icons/pwa-32x32.png",
+    //         sizes: "32x32",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/icons/pwa-128x128.png",
+    //         sizes: "128x128",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/icons/pwa-192x192.png",
+    //         sizes: "192x192",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/icons/pwa-256x256.png",
+    //         sizes: "256x256",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/icons/pwa-512x512.png",
+    //         sizes: "512x512",
+    //         type: "image/png",
+    //       },
+    //       {
+    //         src: "/icons/pwa-1024x1024.png",
+    //         sizes: "1024x1024",
+    //         type: "image/png",
+    //       },
+    //     ],
+    //   },
+    //   registerType: null,
+    //   workbox: {
+    //     cleanupOutdatedCaches: true,
+    //     maximumFileSizeToCacheInBytes: 10485760,
+    //     navigateFallbackDenylist: [
+    //       /robots.txt/,
+    //       /sitemap.xml/,
+    //       /discord/,
+    //       /telegram/,
+    //       /beta/,
+    //       /careers/,
+    //       /newsletter/,
+    //       /twitter/,
+    //       /github/,
+    //       /announcements/,
+    //       /admin/,
+    //       /backend/,
+    //     ],
+    //   },
+    // }),
     VitePWA({
-      useCredentials: true,
-      manifest: {
-        name: APP_INFO.name,
-        short_name: APP_INFO.name,
-        description: APP_INFO.shortDescription,
-        start_url: "/?source=pwa",
-        id: "/?source=pwa",
-        protocol_handlers: [
-          {
-            protocol: "web+hoppscotch",
-            url: "/%s",
-          },
-          {
-            protocol: "web+hopp",
-            url: "/%s",
-          },
-        ],
-        background_color: APP_INFO.app.background,
-        theme_color: APP_INFO.app.background,
-        icons: [
-          {
-            src: "/icons/pwa-16x16.png",
-            sizes: "16x16",
-            type: "image/png",
-          },
-          {
-            src: "/icons/pwa-32x32.png",
-            sizes: "32x32",
-            type: "image/png",
-          },
-          {
-            src: "/icons/pwa-128x128.png",
-            sizes: "128x128",
-            type: "image/png",
-          },
-          {
-            src: "/icons/pwa-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/icons/pwa-256x256.png",
-            sizes: "256x256",
-            type: "image/png",
-          },
-          {
-            src: "/icons/pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "/icons/pwa-1024x1024.png",
-            sizes: "1024x1024",
-            type: "image/png",
-          },
-        ],
-      },
-      registerType: "prompt",
-      workbox: {
-        cleanupOutdatedCaches: true,
-        maximumFileSizeToCacheInBytes: 10485760,
-        navigateFallbackDenylist: [
-          /robots.txt/,
-          /sitemap.xml/,
-          /discord/,
-          /telegram/,
-          /beta/,
-          /careers/,
-          /newsletter/,
-          /twitter/,
-          /github/,
-          /announcements/,
-          /admin/,
-          /backend/,
-        ],
-      },
-    }),
+      registerType: null, // Prevents the service worker from being registered
+  }),
     Unfonts({
       fontsource: {
         families: [

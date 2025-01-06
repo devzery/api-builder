@@ -2,12 +2,12 @@ import { IHTMLTag } from "vite-plugin-html-config"
 
 
 export const APP_INFO = {
- name: "Hoppscotch",
- shortDescription: "Open source API development ecosystem",
+ name: "Devzery API Builder",
+ shortDescription: "Helps build APIs",
  description:
-   "Helps you create requests faster, saving precious time on development.",
+   "Helps you create APIs, manage APIs, and test APIs. It is a fast, reliable, and secure API testing tool.",
  keywords:
-   "hoppscotch, hopp scotch, hoppscotch online, hoppscotch app, postwoman, postwoman chrome, postwoman online, postwoman for mac, postwoman app, postwoman for windows, postwoman google chrome, postwoman chrome app, get postwoman, postwoman web, postwoman android, postwoman app for chrome, postwoman mobile app, postwoman web app, api, request, testing, tool, rest, websocket, sse, graphql, socketio",
+   "API, API Builder, API Manager, API Tester, API Testing, API Development, API Design, API Documentation, API Mocking, API Monitoring, API Proxy, API Gateway, API Security, API Automation, API Integration, API Collaboration, API Lifecycle, API Lifecycle Management, API Lifecycle Automation, API Lifecycle Collaboration, API Lifecycle Integration, API Lifecycle Monitoring, API Lifecycle Security, API Lifecycle Documentation, API Lifecycle Mocking, API Lifecycle Testing, API Lifecycle Manager, API Lifecycle Builder, API Lifecycle Design, API Lifecycle Development, API Lifecycle Proxy, API Lifecycle Gateway, API Lifecycle Automation, API Lifecycle Integration, API Lifecycle Collaboration, API Lifecycle Monitoring, API Lifecycle Security, API Lifecycle Documentation, API Lifecycle Mocking, API Lifecycle Testing, API Lifecycle Manager, API Lifecycle Builder, API Lifecycle Design, API Lifecycle Development, API Lifecycle Proxy, API Lifecycle Gateway",
  app: {
    background: "#080808",
    lightThemeColor: "#ffffff",
